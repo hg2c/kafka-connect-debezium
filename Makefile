@@ -1,6 +1,6 @@
 colon := :
 $(colon) := :
-IMAGE_NAME ?= 012308139854.dkr.ecr.ap-southeast-2.amazonaws.com/kafka/kafka-connect-debezium$(:)1.6.1-strimzi-0.25.0-kafka-2.8.0-1
+IMAGE_NAME ?= 012308139854.dkr.ecr.ap-southeast-2.amazonaws.com/kafka/kafka-connect-debezium$(:)1.6.1-strimzi-0.25.0-kafka-2.8.0-2
 
 build:
 	docker build -t $(IMAGE_NAME) .
@@ -17,3 +17,5 @@ login:
 push:
 	docker push $(IMAGE_NAME)
 
+bash:
+	docker run -it --rm $(IMAGE_NAME) bash
